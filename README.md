@@ -25,18 +25,15 @@ The installer:
 
 ## Usage
 
-### VS Code Copilot
-1. Open Copilot Chat
-2. Select **qa-orchestrator** from the agent dropdown
-3. Type: "Review my changes"
-
-### Claude Code
+### VS Code Copilot & Claude Code
 ```
 /qa-init    # first time only -- customizes rubrics for your stack
 /qa         # review current changes
 /qa-fixit   # auto-fix findings from the last review
 /qa-tune    # teach the pipeline your project's rules
 ```
+
+In VS Code Copilot you can also select **qa-orchestrator** from the agent dropdown and type "Review my changes".
 
 ## Setup
 
@@ -48,7 +45,6 @@ After install, run **qa-init** to customize the pipeline for your project:
 4. Creates `.review/` directory with customized rubric files
 
 Without qa-init, the pipeline still works but uses generic rubrics.
-
 ## Teaching the Pipeline
 
 After qa-init, use `/qa-tune` to teach the pipeline your team's specific rules in plain English. It translates your instructions into rubric file edits.
