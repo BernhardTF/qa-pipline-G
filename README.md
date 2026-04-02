@@ -15,7 +15,7 @@ Findings are scored 0-100. Only 75+ confidence findings appear in the report. Ou
 ## Install
 
 ```bash
-
+git clone https://github.com/BernhardTF/qa-pipline-G.git /tmp/qa-pipeline && /tmp/qa-pipeline/install.sh .   && rm -rf /tmp/qa-pipeline
 ```
 
 The installer:
