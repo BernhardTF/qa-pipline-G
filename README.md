@@ -15,9 +15,7 @@ Findings are scored 0-100. Only 75+ confidence findings appear in the report. Ou
 ## Install
 
 ```bash
-git clone git@bitbucket.org:tforge-dev/qa-pipeline.git /tmp/qa-pipeline
-/tmp/qa-pipeline/install.sh /path/to/your/repo
-rm -rf /tmp/qa-pipeline
+
 ```
 
 The installer:
