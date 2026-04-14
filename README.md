@@ -14,14 +14,22 @@ Findings are scored 0-100. Only 75+ confidence findings appear in the report. Ou
 
 ## Install
 
+### VS Code Copilot
 ```bash
-git clone https://github.com/BernhardTF/qa-pipline-G.git /tmp/qa-pipeline && /tmp/qa-pipeline/install.sh .   && rm -rf /tmp/qa-pipeline
+git clone https://github.com/BernhardTF/qa-pipline-G.git /tmp/qa-pipeline && /tmp/qa-pipeline/install.sh . && rm -rf /tmp/qa-pipeline
 ```
 
-The installer:
-- Creates `.github/agents/`, `.github/instructions/`, `.github/skills/` subdirectories
-- Adds `.vscode/mcp.json` for Context7
-- **Never overwrites** existing files
+### Claude Code
+```bash
+git clone https://github.com/BernhardTF/qa-pipline-G.git /tmp/qa-pipeline && /tmp/qa-pipeline/install-claude.sh . && rm -rf /tmp/qa-pipeline
+```
+
+Both installers:
+- Create `.github/agents/` and `.github/instructions/` (shared by both)
+- **Never overwrite** existing files
+
+VS Code Copilot additionally installs `.github/skills/` and `.vscode/mcp.json`.
+Claude Code additionally installs `.claude/commands/` and `.claude/settings.json` (with Context7 MCP). If `.claude/settings.json` already exists, the installer merges the Context7 server config using `jq` (or prints manual instructions if `jq` is not installed).
 
 ## Usage
 
@@ -119,6 +127,7 @@ git add . && git commit
 
 ## What Gets Installed
 
+### Shared (both platforms)
 ```
 .github/
   agents/
@@ -133,6 +142,11 @@ git add . && git commit
     pattern-conventions.instructions.md
     scoring-rubric.instructions.md
     false-positives.instructions.md
+```
+
+### VS Code Copilot only (install.sh)
+```
+.github/
   skills/
     qa/SKILL.md                # /qa command
     qa-init/SKILL.md           # /qa-init command
@@ -140,6 +154,17 @@ git add . && git commit
     qa-fixit/SKILL.md          # /qa-fixit command
 .vscode/
   mcp.json                     # Context7 MCP server config
+```
+
+### Claude Code only (install-claude.sh)
+```
+.claude/
+  commands/
+    qa.md                      # /qa command
+    qa-init.md                 # /qa-init command
+    qa-tune.md                 # /qa-tune command
+    qa-fixit.md                # /qa-fixit command
+  settings.json                # Context7 MCP server config
 ```
 
 After running qa-init, your project also gets:
