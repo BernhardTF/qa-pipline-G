@@ -1,3 +1,6 @@
+
+<img width="1376" height="766" alt="qa-pipeline-G" src="https://github.com/user-attachments/assets/ebfe31f6-a8de-438f-a6a4-402cc3d6f15d" />
+
 # QA Pipeline
 
 Multi-agent code review pipeline for VS Code Copilot and Claude Code. Reviews your changes for security, correctness, pattern compliance, and API usage before you commit.
